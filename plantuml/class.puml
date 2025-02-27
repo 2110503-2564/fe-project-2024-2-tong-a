@@ -1,33 +1,32 @@
 @startuml
 left to right direction
-package "VacQ"{
-    class "<<Application>>\nVacQService" as VacQService{}
+package "TongA"{
+    class "<<Application>>\nTongAService" as TongAService{}
 
-    class "<<Resource>>\nHospitals" as ResourceHospitals{
-        <<GET>> +getHospitals():Hospital
-        <<POST>> +createHospital():Hospital
+    class "<<Resource>>\nCampgrounds" as ResourceCampgrounds{
+        <<GET>> +getCampgrounds(): Campground
+        <<POST>> +createCampground(): Campground
     }
 
-    class "<<Resource>>\nHospital" as ResourceHospital {
-        <<GET>> +getHospital(): Hospital
-        <<PUT>> +updateHospital(): Hospital
-        <<DELETE>> +deleteHospital(): void
+    class "<<Resource>>\nCampground" as ResourceCampground {
+        <<GET>> +getCampground(): Campground
+        <<PUT>> +updateCampground(): Campground
+        <<DELETE>> +deleteCampground(): void
     }
 
-    class "<<Representation>>\nHospital" as RepresentationHospital {
+    class "<<Representation>>\nCampground" as RepresentationCampground {
         -name
         -address
         -district
         -province
         -postalcode
         -telephone
-        -region
     }
 
 }
 
-VacQService ..> ResourceHospitals:"/hospitals\n<<Path>>"
-ResourceHospitals ..> ResourceHospital: "/{hospitalId}\n<<Path>>"
-ResourceHospital ..> RepresentationHospital: "<<use>>"
+TongAService ..> ResourceCampgrounds:"/campgrounds\n<<Path>>"
+ResourceCampgrounds ..> ResourceCampground: "/{campgroundId}\n<<Path>>"
+ResourceCampground ..> RepresentationCampground: "<<use>>"
 
 @enduml

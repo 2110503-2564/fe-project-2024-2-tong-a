@@ -1,6 +1,6 @@
 @startuml Manage HCampground (PUT)
 
-header Sameple VacQ Sequence Diagram
+header TongA Sequence Diagram
 footer Page %page% of %lastpage%
 title "Manage Campground (PUT)"
 
