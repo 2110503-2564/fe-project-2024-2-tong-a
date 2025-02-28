@@ -16,7 +16,8 @@ exports.getCampgrounds = async (req,res,next)=>{
 
     queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match=>`$${match}`);
 
-    query = Campground.find(JSON.parse(queryStr)).populate('campgrounds');
+    query = Campground.find(JSON.parse(queryStr)).populate('bookings');
+    
 
     //Select
     if(req.query.select)
@@ -38,21 +39,20 @@ exports.getCampgrounds = async (req,res,next)=>{
         query = query.sort('-createdAt');
     }
 
-    //Pagination
-    const page = parseInt(req.query.page,10)||1;
-    const limit = parseInt(req.query.limit,10)||25;
-    const startIndex = (page - 1) * limit;
-    const endIndex = page * limit;
-    const total = await Campground.countDocuments();
-
-    query = query.skip(startIndex).limit(limit);
+    ///pagination
+    const page=parseInt(req.query.page,10)||1;
+    const limit=parseInt(req.query.limit,10)||25;
+    const startIndex=(page-1)*limit;
+    const endIndex=page*limit;
 
     try{
+        const total=await Campground.countDocuments();
+        query=query.skip(startIndex).limit(limit);
         const campgrounds = await query;
-
+        
         //Pagination result
         const pagination = {};
-
+        
         if(endIndex < total)
         {
             pagination.next = {
@@ -60,7 +60,7 @@ exports.getCampgrounds = async (req,res,next)=>{
                 limit
             }
         }
-
+        
         if(startIndex > 0)
         {
             pagination.prev = {
@@ -68,9 +68,10 @@ exports.getCampgrounds = async (req,res,next)=>{
                 limit
             }
         }
-
+        
         res.status(200).json({success: true, count: campgrounds.length, pagination, data: campgrounds});
     } catch(err){
+        //console.error("Query Error:", err);
         res.status(400).json({success: false});
     }
 };

@@ -69,14 +69,15 @@ exports.getBooking = async (req,res,next)=>{
 
 exports.addBooking = async (req,res,next)=>{
    try {
+        //console.log(1);
         req.body.campground = req.params.campgroundId;
 
         const campground = await Campground.findById(req.params.campgroundId);
-
+        
         if(!campground){
             return res.status(404).json({success: false, message: `No campground with the id of ${req.params.campgroundId}`});
         }
-
+        
         console.log(req.user);
 
         req.body.user = req.user;
