@@ -1,21 +1,66 @@
 @startuml Campground System Use Case Diagram
 left to right direction
-actor "User" as user 
-rectangle "Campground System" as campground{
+
+skinparam Actor {
+    BackgroundColor<<User>> LightBlue
+    BorderColor<<User>> Blue
+    FontColor<<User>> Blue
+
+    BackgroundColor<<Admin>> LightGreen
+    BorderColor<<Admin>> Green
+    FontColor<<Admin>> Green
+}
+' Define colors for relationships
+skinparam ArrowColor Blue
+skinparam ActorBorderColor Blue
+skinparam UseCaseBorderColor Black
+
+actor "User" as user <<User>>
+actor "Admin" as admin <<Admin>>
+
+rectangle "Authentication System" as Authentication {
     usecase "Register" as register
-    usecase "View\nCampground" as viewCampground
-    usecase "Manage\nBooking" as manageBooking
-    usecase "Manage\nCampground" as manageCampground 
+    usecase "Login" as login
+    usecase "Logout" as logout
+    usecase "Get User Info" as getMe
 }
 
-user -- register
-user -- viewCampground
-user -- manageBooking
+rectangle "Campground System" as campground {
+    usecase "View ONE Campground" as viewONECampground
+    usecase "View All Campgrounds" as viewCampgrounds
+    usecase "Create Campground" as createCampground
+    usecase "Update Campground" as updateCampground
+    usecase "Delete Campground" as deleteCampground
+}
 
-actor "Admin" as admin 
+rectangle "Booking System" as Booking {
+    usecase "Create Booking" as createBooking
+    usecase "Update Booking" as updateBooking
+    usecase "Delete Booking" as deleteBooking
+    usecase "View All Bookings" as viewBookings
+    usecase "View My Bookings" as viewOWNBookings
+}
 
-register -- admin
-manageCampground -- admin
-manageBooking -- admin
+' Connect users to their respective use cases
+user -[#blue]-> register
+user -[#blue]-> login
+user -[#blue]-> logout
+user -[#blue]-> viewONECampground
+user -[#blue]-> viewOWNBookings
+user -[#blue]-> createBooking
+user -[#blue]-> updateBooking
+user -[#blue]-> deleteBooking
+
+admin -[#green]-> register
+admin -[#green]-> login
+admin -[#green]-> logout
+admin -[#green]-> viewCampgrounds
+admin -[#green]-> createCampground
+admin -[#green]-> updateCampground
+admin -[#green]-> deleteCampground
+admin -[#green]-> createBooking
+admin -[#green]-> updateBooking
+admin -[#green]-> deleteBooking
+admin -[#green]-> viewBookings
 
 @enduml
