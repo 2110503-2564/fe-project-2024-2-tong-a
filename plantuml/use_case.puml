@@ -1,66 +1,55 @@
-@startuml Campground System Use Case Diagram
+@startuml
 left to right direction
 
-skinparam Actor {
-    BackgroundColor<<User>> LightBlue
-    BorderColor<<User>> Blue
-    FontColor<<User>> Blue
+actor User
+actor Admin
 
-    BackgroundColor<<Admin>> LightGreen
-    BorderColor<<Admin>> Green
-    FontColor<<Admin>> Green
-}
-' Define colors for relationships
-skinparam ArrowColor Blue
-skinparam ActorBorderColor Blue
-skinparam UseCaseBorderColor Black
-
-actor "User" as user <<User>>
-actor "Admin" as admin <<Admin>>
-
-rectangle "Authentication System" as Authentication {
-    usecase "Register" as register
-    usecase "Login" as login
-    usecase "Logout" as logout
-    usecase "Get User Info" as getMe
+rectangle "Authentication System" {
+    (Register) .> (Login) : <<include>>
+    User -- (Register)
+    User -- (Login)
+    User -- (Logout)
+    Admin -- (Login)
+    Admin -- (Logout)
 }
 
-rectangle "Campground System" as campground {
-    usecase "View ONE Campground" as viewONECampground
-    usecase "View All Campgrounds" as viewCampgrounds
-    usecase "Create Campground" as createCampground
-    usecase "Update Campground" as updateCampground
-    usecase "Delete Campground" as deleteCampground
+rectangle "Campground System" {
+    User -- (View All Campgrounds)
+    User -- (View One Campground)
+    
+    Admin -- (View All Campgrounds)
+    Admin -- (View One Campground)
+    Admin -- (Create Campground)
+    Admin -- (Update Campground)
+    Admin -- (Delete Campground)
+    
+    (View All Campgrounds) .> (Login) : <<include>>
+    (View One Campground) .> (Login) : <<include>>
+    (Create Campground) .> (Login) : <<include>>
+    (Update Campground) .> (Login) : <<include>>
+    (Delete Campground) .> (Login) : <<include>>
 }
 
-rectangle "Booking System" as Booking {
-    usecase "Create Booking" as createBooking
-    usecase "Update Booking" as updateBooking
-    usecase "Delete Booking" as deleteBooking
-    usecase "View All Bookings" as viewBookings
-    usecase "View My Bookings" as viewOWNBookings
+rectangle "Booking System" {
+    User -- (View Own Booking)
+    User -- (Create Booking)
+    User -- (Update Own Booking)
+    User -- (Delete Own Booking)
+
+    Admin -- (View All Bookings)
+    Admin -- (View One Booking)
+    Admin -- (Create Booking)
+    Admin -- (Update Booking)
+    Admin -- (Delete Booking)
+
+    (View Own Booking) .> (Login) : <<include>>
+    (Create Booking) .> (Login) : <<include>>
+    (Update Own Booking) .> (Login) : <<include>>
+    (Delete Own Booking) .> (Login) : <<include>>
+    (View All Bookings) .> (Login) : <<include>>
+    (View One Booking) .> (Login) : <<include>>
+    (Update Booking) .> (Login) : <<include>>
+    (Delete Booking) .> (Login) : <<include>>
 }
-
-' Connect users to their respective use cases
-user -[#blue]-> register
-user -[#blue]-> login
-user -[#blue]-> logout
-user -[#blue]-> viewONECampground
-user -[#blue]-> viewOWNBookings
-user -[#blue]-> createBooking
-user -[#blue]-> updateBooking
-user -[#blue]-> deleteBooking
-
-admin -[#green]-> register
-admin -[#green]-> login
-admin -[#green]-> logout
-admin -[#green]-> viewCampgrounds
-admin -[#green]-> createCampground
-admin -[#green]-> updateCampground
-admin -[#green]-> deleteCampground
-admin -[#green]-> createBooking
-admin -[#green]-> updateBooking
-admin -[#green]-> deleteBooking
-admin -[#green]-> viewBookings
 
 @enduml
