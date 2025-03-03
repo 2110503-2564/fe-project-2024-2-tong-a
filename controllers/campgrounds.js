@@ -97,6 +97,7 @@ exports.createCampground = async (req,res,next)=>{
 };
 
 exports.updateCampground = async (req,res,next)=>{
+    console.log(1);
     try{
         const campground = await Campground.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
@@ -105,11 +106,14 @@ exports.updateCampground = async (req,res,next)=>{
 
         if(!campground)
         {
+            console.log(req.body);
+            console.log(2);
             return res.status(400).json({success: false});
         }
 
         res.status(200).json({success: true, data: campground});
     } catch(err) {
+        console.log(err)
         res.status(400).json({success: false});
     }
 };

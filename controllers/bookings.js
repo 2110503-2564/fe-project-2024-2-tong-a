@@ -103,7 +103,7 @@ exports.addBooking = async (req,res,next)=>{
 }
 
 exports.updateBooking = async (req,res, next)=>{
-    
+    console.log(1);
     try {
         let booking= await Booking.findById(req.params.id);
 
