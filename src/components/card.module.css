@@ -1,0 +1,57 @@
+/* Styling the card container */
+div.card {
+    width: 250px;
+    height: 300px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding-top: 10px;
+    overflow: hidden; /* Ensure no content overflows */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect on the card */
+div.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the image container */
+div.cardimg {
+    width: 100%;
+    height: 70%;
+    position: relative;
+}
+
+/* Styling for the text container */
+div.cardtext {
+    height: 30%;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    font-family: 'New York', serif; /* New York font */
+}
+
+/* Title styling */
+div.cardtext h2 {
+    font-family: 'New York', serif; /* Using New York font */
+    color: black;  /* Set the text color to black */
+    font-size: 1.5rem;  /* Adjusted size for proper spacing */
+    margin-bottom: 5px;
+}
+
+/* Paragraph text styling */
+div.cardtext p {
+    font-family: 'New York', serif; /* Using New York font */
+    color: rgb(32, 32, 32);  /* Set the text color to black */
+    font-size: 0.8rem;  /* Slightly smaller for balance */
+    margin: 2px 0;
+}
+
+/* Bolded text for emphasis */
+div.cardtext p:first-of-type,
+div.cardtext p:last-of-type {
+    font-weight: bold;
+    color: black;  /* Ensure bold text is also black */
+}

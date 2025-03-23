@@ -1,0 +1,35 @@
+/* Banner styling */
+.banner {
+    display: block;
+    padding: 5px;
+    margin: 0;
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+}
+
+/* Banner text styling */
+.bannerText {
+    position: relative;
+    top: 150px; /* Adjusted space to provide more distance from the top */
+    z-index: 20;
+    text-align: center;
+    color: white;
+    font-family: 'New York', serif; /* New York font */
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Adds shadow to text */
+}
+
+/* Optional: If you'd like to add additional spacing between .banner and .bannerText, you can also use padding or margins */
+.bannerText h1 {
+    margin-bottom: 20px; /* Adds space below the heading */
+    text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.6); /* Adds a stronger shadow for the heading */
+    font-size: 2rem;  /* Adjust font size for the text */
+
+}
+
+.bannerText h3 {
+    margin-top: 10px; /* Adds space above the paragraph if needed */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Adds shadow to the paragraph */
+    font-size: 1.5rem;  /* Adjust font size for the text */
+}
