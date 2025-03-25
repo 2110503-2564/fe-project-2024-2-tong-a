@@ -1,13 +1,12 @@
-
-
 import getCampgrounds from "@/libs/getCampgrounds"
-
 import { Suspense } from "react"
 import { LinearProgress } from "@mui/material"
 import CampCatalog from "@/components/CampCatalog"
+import { CampJson } from "../../../../interface"
 
-export default async function Card(){
-    const camps = await getCampgrounds()
+export default async function CampgroundPage(){
+    const camps : CampJson = await getCampgrounds()
+    console.log(camps)
 
     return(
         <main className="text-center p-5">

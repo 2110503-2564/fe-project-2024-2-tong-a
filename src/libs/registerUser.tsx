@@ -1,6 +1,6 @@
 "use server"
 export default async function registerUser(name: string, tel: string, email: string, password: string, role: string) {
-    const response = await fetch("http://backend-campground-3g25u15y1-patcharamons-projects.vercel.app/api/v1/auth/register", {
+    const response = await fetch("https://backend-campground-3g25u15y1-patcharamons-projects.vercel.app/api/v1/auth/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

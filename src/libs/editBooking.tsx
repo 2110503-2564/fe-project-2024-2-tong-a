@@ -8,7 +8,7 @@ export default async function editBooking(token:string,apptDate:string,campgroun
 
    const campground_object = c.data
 
-    const response = await fetch(`http://backend-campground-3g25u15y1-patcharamons-projects.vercel.app/api/v1/bookings/${booking_id}`,{
+    const response = await fetch(`https://backend-campground-3g25u15y1-patcharamons-projects.vercel.app/api/v1/bookings/${booking_id}`,{
         method:"PUT",
         headers:{
             authorization: `Bearer ${token}`,

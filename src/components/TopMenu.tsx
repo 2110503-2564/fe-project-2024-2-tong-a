@@ -14,8 +14,8 @@ export default async function TopMenu() {
 
     return (
         <div className={styles.menucontainer}>
-            <Image src={'/img/logo.png'} className={styles.logoimg} alt='logo' width={0} height={0} sizes='100vh' />
-            <TopMenuItem title='Booking' pageRef='/booking' />
+            <Image src={'/img/logo.jpg'} className={styles.logoimg} alt='logo' width={0} height={0} sizes='100vh' />
+            {/* <TopMenuItem title='Booking' pageRef='/booking' /> */}
             <div className='mx-5 flex items-center absolute left-0 h-full text-[10pt] text-gray-500'>
                 {
                     session ? (
