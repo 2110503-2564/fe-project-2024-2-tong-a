@@ -36,6 +36,8 @@ export default function Bookings() {
     <main className="w-[100%] flex flex-col items-center space-y-4">
       <div className="text-2xl font-medium font-new-york  text-[#569746]">New Reservation</div>
       <div className="text-xl font-medium font-new-york text-[#FF9BE6]">{name}</div>
+      <div className="text-2xl font-medium font-new-york  text-[#569746]">New Reservation</div>
+      <div className="text-xl font-medium font-new-york text-[#FF9BE6]">{name}</div>
       <div className="w-fit space-y-2">
         <DateReserve onDateChange={(value: Dayjs) => setBookingDate(value)} />
       </div>
@@ -48,6 +50,7 @@ export default function Bookings() {
           
         }}
         >
+          Book Campground
           Book Campground
         </button>
       ) : null}
