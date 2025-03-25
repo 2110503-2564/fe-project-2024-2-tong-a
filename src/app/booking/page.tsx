@@ -29,38 +29,25 @@ export default function Bookings() {
   const {data:session} =useSession()
   const user_id = session?.user._id
 
-  // useEffect(() => {
-  //   // Fetch the session and log it
-  //   const fetchSession = async () => {
-  //     const sessionData = await getSession();
-  //     setSession(sessionData); // Store session in state
-  //     console.log("Session dataaaaaaaaaaaaaaaaaaaa");
-  //     console.log("Session data:", sessionData);  // Log session to the console
-  //   };
-  //   fetchSession();
-  // }, []); // Empty dependency array ensures this runs only once when component mounts
-
   console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",session,"name:",name)
-  
-
 
   return (
     <main className="w-[100%] flex flex-col items-center space-y-4">
-      <div className="text-xl font-medium font-new-york">New Reservation</div>
-      <div className="text-xl font-medium font-new-york">{name}</div>
+      <div className="text-2xl font-medium font-new-york  text-[#569746]">New Reservation</div>
+      <div className="text-xl font-medium font-new-york text-[#FF9BE6]">{name}</div>
       <div className="w-fit space-y-2">
         <DateReserve onDateChange={(value: Dayjs) => setBookingDate(value)} />
       </div>
       {cid && bookingDate && session? (
         <button
-          name="Book Venue"
-          className="block rounded-md bg-[#7d6d5c] hover:bg-[#594c3f] px-3 py-2 text-white shadow-sm font-new-york"
+          name="Book Campground"
+          className="block bg-[#FF9BE6] text-[#DAFFD1] border border-[#FF9BE6] hover:bg-[#DAFFD1] hover:text-[#FF9BE6] font-semi py-2 px-4 rounded"
           onClick={async() => {const response =await addBooking(session?.user.token,cid, bookingDate);
             alert(response);
           
         }}
         >
-          Book Venue
+          Book Campground
         </button>
       ) : null}
     </main>
