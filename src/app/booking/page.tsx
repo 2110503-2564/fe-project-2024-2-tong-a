@@ -55,7 +55,7 @@ export default function Bookings() {
         <button
           name="Book Venue"
           className="block rounded-md bg-[#7d6d5c] hover:bg-[#594c3f] px-3 py-2 text-white shadow-sm font-new-york"
-          onClick={async() => {const response =await addBooking(session?.user.token,cid, bookingDate);
+          onClick={async() => {const response =await addBooking(session?.user.token,cid, bookingDate.toString());
             alert(response);
           
         }}

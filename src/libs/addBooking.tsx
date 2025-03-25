@@ -8,26 +8,27 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/authOptions';
 import { useSession } from 'next-auth/react';
 import getUserProfile from './getUserProfile';
 
-export default async function addBooking( token:string,camp_id: string, appData: Dayjs) {
+export default async function addBooking( token:string,camp_id: string, appData: string) {
    const session = await getServerSession(authOptions);
     
+   
     if(!session)return null
     //    console.log('Session User add Booking:', session);
+    console.log("hereeeeeeeeeeeeeeeeeeeeeeeeeee:",session?.user.token)
      const profile = await getUserProfile(session?.user.token)
    //  const id = session?.user._id
    const id = profile.data._id
     // const user_id = profile.data._id    
 
-    const day= appData.toString()
 
-    const response = await fetch(`http://localhost:5000/api/v1/campgrounds/${camp_id}/bookings`, {
+    const response = await fetch(`http://backend-campground-3g25u15y1-patcharamons-projects.vercel.app/api/v1/campgrounds/${camp_id}/bookings`, {
         method: "POST",
         headers: {
             authorization: `Bearer ${session?.user.token}`,
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            apptDate:day,
+            appData,
             id
         }),
     })
