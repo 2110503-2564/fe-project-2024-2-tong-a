@@ -27,16 +27,12 @@ export default function Bookings() {
 
 
   const { data: session } = useSession();
-  const [userProfile, setUserProfile] = useState<any>()
-
   const user_id = session?.user._id
   
 
   return (
     <main className="w-[100%] flex flex-col items-center space-y-4">
-      <div className="text-2xl font-medium font-new-york  text-[#569746]">New Reservation</div>
-      <div className="text-xl font-medium font-new-york text-[#FF9BE6]">{name}</div>
-      <div className="text-2xl font-medium font-new-york  text-[#569746]">New Reservation</div>
+      <div className="text-2xl font-medium font-new-york  text-[#569746]">New Booking</div>
       <div className="text-xl font-medium font-new-york text-[#FF9BE6]">{name}</div>
       <div className="w-fit space-y-2">
         <DateReserve onDateChange={(value: Dayjs) => setBookingDate(value)} />
@@ -50,7 +46,6 @@ export default function Bookings() {
           
         }}
         >
-          Book Campground
           Book Campground
         </button>
       ) : null}
