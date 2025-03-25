@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 import getCampgrounds from "@/libs/getCampgrounds"
-||||||| 1c25602
-import getVenues from "@/libs/getVenues"
-=======
-import getCampgrounds from "@/libs/getCampgrounds"
-import getVenues from "@/libs/getVenues"
->>>>>>> test/patcharamon
 import { Suspense } from "react"
 import { LinearProgress } from "@mui/material"
 import CampCatalog from "@/components/CampCatalog"
