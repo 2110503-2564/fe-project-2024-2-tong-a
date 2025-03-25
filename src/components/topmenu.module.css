@@ -1,13 +1,13 @@
 .menucontainer {
     height:50px;
-    background-color: white;
+    background-color: #3B672F;
     position: fixed;
     top: 0px;
     left:0px;
     right:0px;
     z-index:30;
-    border-top: 1px solid lightgrey;
-    border-bottom: 1px solid lightgrey;
+    border-top: 1px solid #3B672F;
+    border-bottom: 1px solid #3B672F;
     display: flex;
     flex-direction: row-reverse;
     font: normal;
@@ -15,9 +15,8 @@
 }
 
 .logoimg {
-    height:90%;
+    height:100%;
     width: auto;
-    margin-top: 3px;
 }
 
 .itemcontainer{
@@ -27,5 +26,5 @@
     margin-bottom: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 10pt;
-    color: grey;
+    color: #FFDBF3;
 }
