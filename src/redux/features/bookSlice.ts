@@ -30,7 +30,7 @@ export const bookSlice = createSlice({
 
 // Export the actions
 export const { addBooking } = bookSlice.actions;
-////////////////////////////////////////////////////
+/////////////////////////
 
 // Export the reducer to be used in the store
 export default bookSlice.reducer;
