@@ -20,7 +20,7 @@ export default async function addBooking( token:string,camp_id: string, appData:
 
     const day= appData.toString()
 
-    const response = await fetch(`http://localhost:5000/api/v1/campgrounds/${camp_id}/bookings`, {
+    const response = await fetch(`http://backend-campground-3g25u15y1-patcharamons-projects.vercel.app/api/v1/campgrounds/${camp_id}/bookings`, {
         method: "POST",
         headers: {
             authorization: `Bearer ${session?.user.token}`,
