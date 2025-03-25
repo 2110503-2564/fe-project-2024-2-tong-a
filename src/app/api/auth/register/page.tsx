@@ -48,8 +48,8 @@ export default   function RegisterPage() {
     }
   };
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-        <div className="text-xl text-blue-700 mb-4 text-center">Create User</div>
+    <div className="items-center justify-center min-h-screen bg-gray-100 p-5">
+        <div className="text-2xl text-[#569746] mb-4 text-center">Create User</div>
 
         {/* Name Field */}
         <div className="flex items-center my-2">
@@ -61,7 +61,7 @@ export default   function RegisterPage() {
             defaultValue="admin1"
             placeholder="Name"
             required
-            className="bg-white border-2 border-gray-200 rounded w-full p-2 text-gray-700 focus:outline-none focus:border-blue-400"
+            className="bg-white border-2 border-gray-200 rounded w-full p-2 text-gray-700 focus:outline-none focus:border-[#FF9BE6]"
             value={formData.name}
             onChange={handleChange}
           />
@@ -77,7 +77,7 @@ export default   function RegisterPage() {
             defaultValue="02-12345678"
             placeholder="Telephone"
             required
-            className="bg-white border-2 border-gray-200 rounded w-full p-2 text-gray-700 focus:outline-none focus:border-blue-400"
+            className="bg-white border-2 border-gray-200 rounded w-full p-2 text-gray-700 focus:outline-none focus:border-[#FF9BE6]"
             value={formData.tel}
             onChange={handleChange}
           />
@@ -93,7 +93,7 @@ export default   function RegisterPage() {
             defaultValue="admin1@gmail.com"
             placeholder="Email"
             required
-            className="bg-white border-2 border-gray-200 rounded w-full p-2 text-gray-700 focus:outline-none focus:border-blue-400"
+            className="bg-white border-2 border-gray-200 rounded w-full p-2 text-gray-700 focus:outline-none focus:border-[#FF9BE6]"
             value={formData.email}
             onChange={handleChange}
           />
@@ -109,7 +109,7 @@ export default   function RegisterPage() {
             defaultValue="1111111"
             placeholder="Password"
             required
-            className="bg-white border-2 border-gray-200 rounded w-full p-2 text-gray-700 focus:outline-none focus:border-blue-400"
+            className="bg-white border-2 border-gray-200 rounded w-full p-2 text-gray-700 focus:outline-none focus:border-[#FF9BE6]"
             value={formData.password}
             onChange={handleChange}
           />
