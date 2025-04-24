@@ -1,0 +1,93 @@
+[debug] [2025-04-24T06:34:58.362Z] ----------------------------------------------------------------------
+[debug] [2025-04-24T06:34:58.367Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\khiml\OneDrive\Documents\CEDT_year1_sem2\SOFTWARE\GitHubActionPractice\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2025-04-24T06:34:58.368Z] CLI Version:   14.2.1
+[debug] [2025-04-24T06:34:58.368Z] Platform:      win32
+[debug] [2025-04-24T06:34:58.369Z] Node Version:  v22.14.0
+[debug] [2025-04-24T06:34:58.369Z] Time:          Thu Apr 24 2025 13:34:58 GMT+0700 (Indochina Time)
+[debug] [2025-04-24T06:34:58.370Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-24T06:34:58.376Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-04-24T06:34:58.827Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-24T06:34:58.828Z] > authorizing via signed-in user (6733171021@student.chula.ac.th)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\khiml\OneDrive\Documents\CEDT_year1_sem2\SOFTWARE\GitHubActionPractice
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-04-24T06:34:58.877Z] Using project from CLI flag: fireship-lessons
+[debug] [2025-04-24T06:34:58.879Z] Checked if tokens are valid: true, expires at: 1745480089313
+[debug] [2025-04-24T06:34:58.879Z] Checked if tokens are valid: true, expires at: 1745480089313
+[debug] [2025-04-24T06:34:58.880Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fireship-lessons [none]
+[debug] [2025-04-24T06:34:59.842Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-04-24T06:34:59.843Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-04-24T06:34:59.972Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fireship-lessons 403
+[debug] [2025-04-24T06:34:59.972Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fireship-lessons {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-04-24T06:34:59.974Z] Request to https://firebase.googleapis.com/v1beta1/projects/fireship-lessons had HTTP Error: 403, The caller does not have permission
+[debug] [2025-04-24T06:35:00.363Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/fireship-lessons had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\khiml\OneDrive\Documents\CEDT_year1_sem2\SOFTWARE\GitHubActionPractice\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\khiml\OneDrive\Documents\CEDT_year1_sem2\SOFTWARE\GitHubActionPractice\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to get Firebase project fireship-lessons. Please make sure the project exists and your account has permission to access it.
+[debug] [2025-04-24T06:35:09.064Z] ----------------------------------------------------------------------
+[debug] [2025-04-24T06:35:09.072Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\khiml\OneDrive\Documents\CEDT_year1_sem2\SOFTWARE\GitHubActionPractice\node_modules\firebase-tools\lib\bin\firebase.js init emulators
+[debug] [2025-04-24T06:35:09.073Z] CLI Version:   14.2.1
+[debug] [2025-04-24T06:35:09.073Z] Platform:      win32
+[debug] [2025-04-24T06:35:09.073Z] Node Version:  v22.14.0
+[debug] [2025-04-24T06:35:09.074Z] Time:          Thu Apr 24 2025 13:35:09 GMT+0700 (Indochina Time)
+[debug] [2025-04-24T06:35:09.074Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-24T06:35:09.508Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-24T06:35:09.509Z] > authorizing via signed-in user (6733171021@student.chula.ac.th)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\khiml\OneDrive\Documents\CEDT_year1_sem2\SOFTWARE\GitHubActionPractice
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-04-24T06:35:09.556Z] Using project from CLI flag: fireship-lessons
+[debug] [2025-04-24T06:35:09.558Z] Checked if tokens are valid: true, expires at: 1745480089313
+[debug] [2025-04-24T06:35:09.559Z] Checked if tokens are valid: true, expires at: 1745480089313
+[debug] [2025-04-24T06:35:09.562Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fireship-lessons [none]
+[debug] [2025-04-24T06:35:10.346Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fireship-lessons 403
+[debug] [2025-04-24T06:35:10.346Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fireship-lessons {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-04-24T06:35:10.348Z] Request to https://firebase.googleapis.com/v1beta1/projects/fireship-lessons had HTTP Error: 403, The caller does not have permission
+[debug] [2025-04-24T06:35:11.283Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/fireship-lessons had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\khiml\OneDrive\Documents\CEDT_year1_sem2\SOFTWARE\GitHubActionPractice\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\khiml\OneDrive\Documents\CEDT_year1_sem2\SOFTWARE\GitHubActionPractice\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to get Firebase project fireship-lessons. Please make sure the project exists and your account has permission to access it.
